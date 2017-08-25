@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="www.thymeleaf.org">
+<head th:replace="base :: headstuff"></head>
+<body>
+    <nav th:replace="base :: navbar"></nav>
+
+    <div class="container">
+        <div align="center" class="jumbotron">
+            <a href="/">All Messages</a><br />
+
+            <h4>Message:<small class="text-muted" th:text="${message.content}"></small></h4>
+            <h4>Sent By:<small class="text-muted" th:text="${message.sentby}"></small></h4>
+            <h4>Date:<small class="text-muted" th:text="${message.dateToString()}"></small></h4>
+
+            <a href="/add">Add Message</a><br />
+        </div>
+    </div>
+
+    <nav th:replace="base :: footer"></nav>
+    <th:block th:replace="base :: jslinks"></th:block>
+</body>
+</html>
